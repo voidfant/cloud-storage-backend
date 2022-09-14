@@ -79,18 +79,18 @@ WSGI_APPLICATION = "drf.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-import pymysql
-pymysql.install_as_MySQLdb()
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "killedPrev",
-        "USER": "root",
-        "PASSWORD": "19Andrew76",
-        "HOST": "localhost",
-        "PORT": "3306"
-    }
-}
+#import pymysql
+#pymysql.install_as_MySQLdb()
+#DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.mysql",
+#        "NAME": "db",
+#        "USER": "toor",
+#        "PASSWORD": "toor",
+#        "HOST": "127.0.0.1",
+#        "PORT": "3306"
+#   }
+#}
 
 
 # Password validation

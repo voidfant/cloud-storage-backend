@@ -4,10 +4,10 @@ import pymysql.cursors
 class SQLInteractor(object):
 
     def __init__(self):
-        self.connection = pymysql.connect(host='localhost',
-                                     user='root',
-                                     password='19Andrew76',
-                                     database='killedPrev',
+        self.connection = pymysql.connect(host='127.0.0.1',
+                                     user='toor',
+                                     password='toor',
+                                     database='db',
                                      cursorclass=pymysql.cursors.DictCursor)
 
     def checkId(self, elementId: str) -> str:
@@ -68,10 +68,10 @@ class SQLInteractor(object):
             self.connection.commit()
 
     def getFolderSize(self, elementId: str) -> int:
-        connection = pymysql.connect(host='localhost',
-                                     user='root',
-                                     password='19Andrew76',
-                                     database='killedPrev',
+        connection = pymysql.connect(host='127.0.0.1',
+                                     user='toor',
+                                     password='toor',
+                                     database='db',
                                      cursorclass=pymysql.cursors.DictCursor)
         with connection:
             with connection.cursor() as cursor:
@@ -91,10 +91,10 @@ class SQLInteractor(object):
             return size
 
     def getChildrenIds(self, elementId: str) -> list:
-        connection = pymysql.connect(host='localhost',
-                                     user='root',
-                                     password='19Andrew76',
-                                     database='killedPrev',
+        connection = pymysql.connect(host='127.0.0.1',
+                                     user='toor',
+                                     password='toor',
+                                     database='db',
                                      cursorclass=pymysql.cursors.DictCursor)
         with connection:
             with connection.cursor() as cursor:
@@ -127,10 +127,10 @@ class SQLInteractor(object):
             self.connection.commit()
 
     def getParentsIds(self, elementId: str) -> list:
-        connection = pymysql.connect(host='localhost',
-                                     user='root',
-                                     password='19Andrew76',
-                                     database='killedPrev',
+        connection = pymysql.connect(host='127.0.0.1',
+                                     user='toor',
+                                     password='toor',
+                                     database='db',
                                      cursorclass=pymysql.cursors.DictCursor)
         with connection:
             with connection.cursor() as cursor:

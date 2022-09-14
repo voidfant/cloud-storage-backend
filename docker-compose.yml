@@ -1,0 +1,31 @@
+version: '3.3'
+services:
+  webservice:
+    container_name: disk_service
+    build: ./deployment/backend/
+    restart: on-failure
+    volumes:
+      - "SYSTEM_PATH:/disk_service"
+    ports:
+      - "80:80"
+    links:
+      - mysql
+    depends_on:
+      - mysql
+      
+  mysql:
+    container_name: mysql
+    build:
+      context: ./deployment/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_HOST=${DB_HOST}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+    command:
+      --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./persistent_data/mysql:/var/lib/mysql
